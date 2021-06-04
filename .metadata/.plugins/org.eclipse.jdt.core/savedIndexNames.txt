@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/home/mannem/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+2860334101.index
+132526095.index
+2241931464.index
+4132763614.index

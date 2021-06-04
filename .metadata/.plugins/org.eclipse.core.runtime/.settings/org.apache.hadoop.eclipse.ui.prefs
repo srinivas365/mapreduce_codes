@@ -1,0 +1,2 @@
+HDFS_SERVER_URLS=hdfs\://127.0.0.1\:9000\r\nhdfs\://localhost\:9000\r\n
+eclipse.preferences.version=1

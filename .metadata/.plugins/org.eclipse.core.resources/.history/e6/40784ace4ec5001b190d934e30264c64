@@ -1,0 +1,46 @@
+package com.learn;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class HfReducer extends Reducer<LongWritable, Text, Text, LongWritable>{
+
+	@Override
+	protected void reduce(LongWritable key, Iterable<Text> values,Context context) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		Map<String,Integer> hashMap=new HashMap<String, Integer>();
+		for(Text word:values) {
+			if(hashMap.containsKey(word.toString())) {
+				Integer prev=hashMap.get(word.toString());
+				hashMap.put(word.toString(),prev+1);
+			}else {
+				hashMap.put(word.toString(),1);
+			}
+		}
+		
+		Integer maxu=-1;
+		List<Integer> allValues=(List<Integer>) hashMap.values();
+		for(Integer val:allValues) {
+			if(val>=maxu) {
+				maxu=val;
+			}
+		}
+		
+		for(Entry<String, Integer> x:hashMap.entrySet()) {
+			if(x.getValue()==maxu) {
+				context.write(new Text(x.getKey()), new LongWritable(x.getValue()));
+			}
+		}
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;mrlearn&apos; to &apos;WordCount&apos;" description="Rename resource &apos;mrlearn&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/mrlearn" name="WordCount" stamp="1622817796745" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;WordCount&apos; to &apos;wordCount&apos;" description="Rename resource &apos;WordCount&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/WordCount" name="wordCount" stamp="1622817830028" updateReferences="true"/>
+</session>
